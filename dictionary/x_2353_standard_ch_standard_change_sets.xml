@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Standard Change Sets" max_length="40" name="x_2353_standard_ch_standard_change_sets" type="collection"/>
+</database>
