@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Source Fields" max_length="40" name="x_2353_standard_ch_source_fields" type="collection">
+        <element label="Change Set" max_length="32" name="change_set" reference="x_2353_standard_ch_standard_change_sets" type="reference"/>
+        <element display="true" label="Field Label" max_length="40" name="field_label" type="string"/>
+        <element label="Field Name" max_length="40" name="field_name" type="string"/>
+        <index name="index">
+            <element name="change_set"/>
+        </index>
+    </element>
+</database>

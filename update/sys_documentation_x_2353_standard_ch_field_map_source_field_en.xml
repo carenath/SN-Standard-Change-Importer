@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="source_field" label="Source Field" language="en" table="x_2353_standard_ch_field_map">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>source_field</element>
+            <help/>
+            <hint/>
+            <label>Source Field</label>
+            <language>en</language>
+            <name>x_2353_standard_ch_field_map</name>
+            <plural>Source Fields</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-11-09 18:20:41</sys_created_on>
+            <sys_id>8835f62fdb612300c2acab7dca9619ad</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Source Field</sys_name>
+            <sys_package display_value="Standard Change Import Helper" source="x_2353_standard_ch">4a3e524bdb902300768f2a9a4896195f</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Standard Change Import Helper">4a3e524bdb902300768f2a9a4896195f</sys_scope>
+            <sys_update_name>sys_documentation_x_2353_standard_ch_field_map_source_field_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-11-09 18:20:41</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>
