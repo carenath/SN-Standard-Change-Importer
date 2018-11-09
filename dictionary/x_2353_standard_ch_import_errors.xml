@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Import Errors" max_length="40" name="x_2353_standard_ch_import_errors" type="collection">
+        <element label="Affected Column" max_length="100" name="affected_column" type="string"/>
+        <element label="Affected Record" max_length="32" name="affected_record" reference="std_change_record_producer" type="reference"/>
+        <element label="Change Set" max_length="32" name="change_set" reference="x_2353_standard_ch_standard_change_sets" type="reference"/>
+        <element label="Reason for Error" max_length="4000" name="reason_for_error" type="string"/>
+        <element label="Source Record" max_length="32" name="source_record" type="document_id"/>
+        <index name="index">
+            <element name="change_set"/>
+        </index>
+        <index name="index2">
+            <element name="source_record"/>
+        </index>
+        <index name="index3">
+            <element name="affected_record"/>
+        </index>
+    </element>
+</database>
