@@ -1,4 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<database>
-    <element label="Standard Change Sets" max_length="40" name="x_2353_standard_ch_standard_change_sets" type="collection"/>
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Standard Change Sets" max_length="40" name="x_2353_standard_ch_standard_change_sets" type="collection">
+        <element attributes="edge_encryption_enabled=true" default="true" label="Auto Approve" max_length="40" name="auto_approve" type="boolean"/>
+        <element attributes="edge_encryption_enabled=true" default="true" label="Auto Update" max_length="40" name="auto_update" type="boolean"/>
+        <element label="Field Map" max_length="4000" name="field_map" type="string"/>
+        <element label="Field Mapping" max_length="40" name="field_mapping" type="string"/>
+        <element attributes="base_start=true,edge_encryption_enabled=true" label="Import Table" max_length="80" name="import_table" type="table_name"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element display="true" label="Set Name" mandatory="true" max_length="100" name="set_name" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Test Field" max_length="800" name="test_field" type="data_structure"/>
+    </element>
 </database>

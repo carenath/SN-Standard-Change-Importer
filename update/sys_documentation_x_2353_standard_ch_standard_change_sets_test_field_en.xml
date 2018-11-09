@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
-    <sys_documentation element="" label="Standard Change Sets" language="en" table="x_2353_standard_ch_standard_change_sets">
+    <sys_documentation element="test_field" label="Test Field" language="en" table="x_2353_standard_ch_standard_change_sets">
         <sys_documentation action="INSERT_OR_UPDATE">
-            <element/>
+            <element>test_field</element>
             <help/>
             <hint/>
-            <label>Standard Change Sets</label>
+            <label>Test Field</label>
             <language>en</language>
             <name>x_2353_standard_ch_standard_change_sets</name>
-            <plural>Standard Change Sets</plural>
+            <plural>Test Fields</plural>
             <sys_class_name>sys_documentation</sys_class_name>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-09-07 00:04:54</sys_created_on>
-            <sys_id>d23ed203dbd02300768f2a9a489619c8</sys_id>
+            <sys_created_on>2018-11-09 17:28:45</sys_created_on>
+            <sys_id>9f4962e3db612300c2acab7dca961916</sys_id>
             <sys_mod_count>0</sys_mod_count>
-            <sys_name>Standard Change Sets</sys_name>
+            <sys_name>Test Field</sys_name>
             <sys_package display_value="Standard Change Import Helper" source="x_2353_standard_ch">4a3e524bdb902300768f2a9a4896195f</sys_package>
             <sys_policy/>
             <sys_scope display_value="Standard Change Import Helper">4a3e524bdb902300768f2a9a4896195f</sys_scope>
-            <sys_update_name>sys_documentation_x_2353_standard_ch_standard_change_sets__en</sys_update_name>
+            <sys_update_name>sys_documentation_x_2353_standard_ch_standard_change_sets_test_field_en</sys_update_name>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-09-07 00:04:54</sys_updated_on>
+            <sys_updated_on>2018-11-09 17:28:45</sys_updated_on>
             <url/>
             <url_target/>
         </sys_documentation>

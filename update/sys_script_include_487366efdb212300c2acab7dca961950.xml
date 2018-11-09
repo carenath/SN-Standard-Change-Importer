@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_2353_standard_ch.StdChangeBulkImportHelper</api_name>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>StdChangeBulkImportHelper</name>
+        <script><![CDATA[var StdChangeBulkImportHelper = Class.create();
+StdChangeBulkImportHelper.prototype = {
+    initialize: function() {
+    },
+	
+		/**
+	 * @description - Function to compile the value for the template_value field on the change request template.
+	 *
+	 * @returns {string} - concatanized string leveraing santized data
+	 */
+	buildTemplate: function() {
+		var changeTemplate = "";
+
+		//Configure the below variable with the following format :
+		// column_name_from_import_set : {
+		//     "name": column_name_from_change_record,
+		//     "type": column_type_from_change_record,
+		//     "table": referenced_table_for_reference_fields_only
+		//     "required":if true, populates a value of 'NA' if the source field is empty.
+		//
+		// Currently only string and reference field types are supported in the logic.
+		var availableFields = {
+			"u_company": {
+				"name": "company",
+				"type": "reference",
+				"table": "core_company"
+			},
+			"u_description": {
+				"name": "description",
+				"type": "string",
+				"required": true
+			},
+			"u_assignment_group": {
+				"name": "assignment_group",
+				"type": "reference",
+				"table": "sys_user_group"
+			},
+			"u_brief_description": {
+				"name": "short_description",
+				"type": "string",
+				"required": true
+			},
+			"u_affected_ci": {
+				"name": "configuration_item",
+				"type": "reference",
+				"table": "cmdb_ci"
+			},
+			"u_impact": {
+				"name": "impact",
+				"type": "string"
+			},
+			"u_urgency": {
+				"name": "urgency",
+				"type": "string"
+			},
+			"u_backout_method": {
+				"name": "backout_plan",
+				"type": "string",
+				"required": true
+			},
+			"u_risk_severity": {
+				"name": "risk",
+				"type": "string"
+			},
+			"u_justification": {
+				"name": "justification",
+				"type": "string"
+			},
+			"u_qvc_standard_details": {
+				"name": "implementation_plan",
+				"type": "string",
+				"required": true
+			},
+			"u_qvc_test_plan": {
+				"name": "test_plan",
+				"type": "string",
+				"required": true
+			},
+			"u_priority": {
+				"name": "priority",
+				"type": "string"
+			},
+			"u_service": false,
+			"u_sub_service": false,
+			"u_asset_id": false,
+			"u_qvc_affected_item": false,
+			"u_subcatagory": false,
+		};
+
+		for (var key in availableFields) {
+			if (availableFields.hasOwnProperty(key)) {
+				var element = availableFields[key];
+
+				if (element && (source[key.toString()].toString() != "" || element.required)) {
+					switch (element.type) {
+						case "string":
+							if (source[key.toString()].toString() == "" && element.required) {
+								changeTemplate += element.name + "=NA^";
+							} else {
+								changeTemplate += element.name + "=" + source[key.toString()].toString() + "^";
+							}
+
+							break;
+						case "reference":
+							var refElement = refLookup(element.table, source[key.toString()].toString(), element.type, element.name);
+
+							if (refElement != "") {
+								changeTemplate += element.name + "=" + refElement + "^";
+							}
+
+							break;
+
+						default:
+					}
+				}
+			}
+		}
+
+		changeTemplate += "^EQ";
+
+		return changeTemplate;
+	},
+
+	/**
+	 * @description - Function to locate the SysID for a reference field with respect to the value provided by the spreadsheet.
+	 * 
+	 * @param {string} table - The table for which the given choice value is relative.
+	 * @param {string} value - The value which will be located for a given field.
+	 * @param {string} refType - The type of the field, indicates the reference type which will be retrieved.
+	 * @param {string} elName - The name of the field to be looked up in a choice lookup
+	 * 
+	 * @returns {string} - Returns the SysID of the record found, or Null in the case of no value found.
+	 */
+	refLookup: function(table, value, refType, elName) {
+		var refRecord;
+
+		if (refType == "choice") {
+			refRecord = new GlideRecord("sys_choice");
+			refRecord.addQuery("name", table);
+			refRecord.addQuery("label", value).addOrCondition("value", value);
+			refRecord.addQuery("inactive", false);
+			refRecord.addQuery("element", elName);
+			refRecord.query();
+		} else if (refType == "reference") {
+			refRecord = new GlideRecord(table);
+			refRecord.addQuery("name", value);
+			refRecord.query();
+		}
+
+		if (refRecord.hasNext()) {
+			refRecord.next();
+			return refRecord.sys_id + '';
+		} else {
+			gs.info("Change Template Transfor Failure : " + source.u_template_title + " Element : " + value + " Table : " + table + " Does not exist.");
+
+			return "";
+		}
+	},
+
+	/**
+	 * @description - Function to set the Proposal type and the respective target Chagne Producer in the event an existing Standard Proposal exists.
+	 */
+	setProposalType: function() {
+		var activeProposal = new GlideRecord("std_change_record_producer");
+		activeProposal.addQuery("name", source.u_template_title);
+		activeProposal.addQctiveQuery();
+		activeProposal.query();
+
+		if (activeProposal.hasNext()) {
+			activeProposal.next();
+			target.proposal_type = 2; //Sets as update to existing
+			target.std_change_producer = activeProposal.sys_id + '';
+		} else {
+			target.proposal_type = 1;
+		}
+	},
+
+	/**
+	 * @description - Function to collect the current target record, accounting for any non-new entries in the Change Proposals Table
+	 * 
+	 * @returns {GlideRecord} - The current record located to align with the imported record, or a newly initialized record.
+	 * 
+	 * --- This is currently not in use in favor of OOB functionality
+	 */
+	getTargetRecord: function() {
+		var myTemplate = new GlideRecord("std_change_proposal");
+		myTemplate.addQuery("name", source.u_template_title);
+		myTemplate.addQuery("state", "1");
+		myTemplate.addQctiveQuery();
+		myTemplate.query();
+
+		if (myTemplate.hasNext()) {
+			myTemplate.next();
+
+			return myTemplate;
+		} else {
+			myTemplate.initialize();
+			return myTemplate;
+		}
+	},
+
+	/**
+	 * @description - Function to initialize values for the Change Proposals
+	 */
+	setTemplateValues: function() {
+		target.template_value = buildTemplate(); //Does the thing
+		setProposalType(); //Does the other thing
+		// target = getTargetRecord(); //Disabling to use OOB functionality
+	},
+
+    type: 'StdChangeBulkImportHelper'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-11-09 17:33:40</sys_created_on>
+        <sys_id>487366efdb212300c2acab7dca961950</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>StdChangeBulkImportHelper</sys_name>
+        <sys_package display_value="Standard Change Import Helper" source="x_2353_standard_ch">4a3e524bdb902300768f2a9a4896195f</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Standard Change Import Helper">4a3e524bdb902300768f2a9a4896195f</sys_scope>
+        <sys_update_name>sys_script_include_487366efdb212300c2acab7dca961950</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-11-09 17:33:40</sys_updated_on>
+    </sys_script_include>
+</record_update>
