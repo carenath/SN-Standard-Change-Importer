@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element extends="sys_import_set_row" label="Test Table" max_length="40" name="x_2353_standard_ch_test_table" type="collection">
+        <element attributes="import_attribute_name=Auto Approve,edge_encryption_enabled=true" label="Auto Approve" max_length="40" name="u_auto_approve" type="string"/>
+        <element attributes="import_attribute_name=Auto Update,edge_encryption_enabled=true" label="Auto Update" max_length="40" name="u_auto_update" type="string"/>
+        <element attributes="import_attribute_name=Import Table,edge_encryption_enabled=true" label="Import Table" max_length="40" name="u_import_table" type="string"/>
+        <element attributes="import_attribute_name=Number,edge_encryption_enabled=true" label="Number" max_length="40" name="u_number" type="string"/>
+        <element attributes="import_attribute_name=Set Name,edge_encryption_enabled=true" label="Set Name" max_length="40" name="u_set_name" type="string"/>
+    </element>
+</database>
