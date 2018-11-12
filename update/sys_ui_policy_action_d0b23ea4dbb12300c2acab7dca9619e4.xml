@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_policy_action">
     <sys_ui_policy_action action="INSERT_OR_UPDATE">
         <cleared>false</cleared>
-        <disabled>true</disabled>
+        <disabled>false</disabled>
         <field>import_table</field>
         <mandatory>ignore</mandatory>
         <sys_class_name>sys_ui_policy_action</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2018-11-09 19:23:17</sys_created_on>
-        <sys_id>f48347e7dba12300c2acab7dca961935</sys_id>
+        <sys_created_on>2018-11-12 20:44:20</sys_created_on>
+        <sys_id>d0b23ea4dbb12300c2acab7dca9619e4</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>import_table</sys_name>
         <sys_package display_value="Standard Change Import Helper" source="x_2353_standard_ch">4a3e524bdb902300768f2a9a4896195f</sys_package>
         <sys_policy/>
         <sys_scope display_value="Standard Change Import Helper">4a3e524bdb902300768f2a9a4896195f</sys_scope>
-        <sys_update_name>sys_ui_policy_action_f48347e7dba12300c2acab7dca961935</sys_update_name>
+        <sys_update_name>sys_ui_policy_action_d0b23ea4dbb12300c2acab7dca9619e4</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-11-09 19:23:17</sys_updated_on>
+        <sys_updated_on>2018-11-12 20:44:20</sys_updated_on>
         <table>x_2353_standard_ch_standard_change_sets</table>
-        <ui_policy display_value="Set ReadOnly Fields">fc8347e7dba12300c2acab7dca961932</ui_policy>
+        <ui_policy display_value="Require Data Source">0c3a1ae4db712300c2acab7dca961960</ui_policy>
         <visible>ignore</visible>
     </sys_ui_policy_action>
 </record_update>

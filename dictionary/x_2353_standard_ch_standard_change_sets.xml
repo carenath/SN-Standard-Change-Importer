@@ -1,19 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element label="Standard Change Sets" max_length="40" name="x_2353_standard_ch_standard_change_sets" type="collection">
+    <element label="Standard Change Set" max_length="40" name="x_2353_standard_ch_standard_change_sets" type="collection">
+        <element default="true" label="Active" max_length="40" name="active" type="boolean"/>
         <element attributes="edge_encryption_enabled=true" default="true" label="Auto Approve" max_length="40" name="auto_approve" type="boolean"/>
         <element attributes="edge_encryption_enabled=true" default="true" label="Auto Update" max_length="40" name="auto_update" type="boolean"/>
+        <element choice="1" label="Data Source" max_length="40" name="data_source" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Attachment" sequence="100" value="attachment"/>
+                <element inactive_on_update="false" label="Specified Table" sequence="200" value="user_table"/>
+            </choice>
+        </element>
         <element label="Import Set" max_length="32" name="import_set" reference="sys_import_set" type="reference"/>
-        <element attributes="base_start=true,edge_encryption_enabled=true" label="Import Table" max_length="100" name="import_table" type="string"/>
+        <element attributes="base_start=true,edge_encryption_enabled=true" label="Import Table" max_length="100" name="import_table" type="table_name"/>
         <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
         <element display="true" label="Set Name" mandatory="true" max_length="100" name="set_name" type="string"/>
-        <element choice="1" default="New" label="State" max_length="40" name="state" type="choice">
+        <element choice="1" default="1" label="State" max_length="40" name="state" type="choice">
             <choice>
                 <element inactive_on_update="false" label="New" sequence="0" value="1"/>
                 <element inactive_on_update="false" label="Awaiting Data" sequence="1" value="2"/>
                 <element inactive_on_update="false" label="Awaiting Field Map" sequence="2" value="3"/>
-                <element inactive_on_update="false" label="Error Resolution" sequence="3" value="5"/>
-                <element inactive_on_update="false" label="Ready for Import" sequence="4" value="4"/>
-                <element inactive_on_update="false" label="Import Completed" sequence="5" value="10"/>
+                <element inactive_on_update="false" label="Data Validation" sequence="3" value="6"/>
+                <element inactive_on_update="false" label="Data Validated" sequence="4" value="7"/>
+                <element inactive_on_update="false" label="Error Resolution" sequence="5" value="5"/>
+                <element inactive_on_update="false" label="Ready for Import" sequence="6" value="4"/>
+                <element inactive_on_update="false" label="Import Completed" sequence="7" value="10"/>
+                <element inactive_on_update="false" label="Import Cancelled" sequence="8" value="11"/>
             </choice>
         </element>
         <index name="index">

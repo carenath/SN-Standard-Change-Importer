@@ -2,10 +2,10 @@
     <sys_ui_action action="INSERT_OR_UPDATE">
         <action_name/>
         <active>true</active>
-        <client>false</client>
+        <client>true</client>
         <client_script_v2/>
-        <comments>Launches script to validate the fields chosen against required fields, and those not allowed by the standard change configuration.</comments>
-        <condition>current.state.value == 3</condition>
+        <comments/>
+        <condition>current.data_source == "attachment"</condition>
         <form_action>true</form_action>
         <form_button>false</form_button>
         <form_button_v2>false</form_button_v2>
@@ -14,7 +14,7 @@
         <form_menu_button_v2>false</form_menu_button_v2>
         <form_style/>
         <hint/>
-        <isolate_script>false</isolate_script>
+        <isolate_script>true</isolate_script>
         <list_action>false</list_action>
         <list_banner_button>false</list_banner_button>
         <list_button>false</list_button>
@@ -23,31 +23,35 @@
         <list_link>false</list_link>
         <list_save_with_form_button>false</list_save_with_form_button>
         <list_style/>
-        <name>PreValidate Fields</name>
-        <onclick/>
-        <order>300</order>
-        <script><![CDATA[current.state = 6; //Set State to Data Validation
-action.setRedirectURL(current);
-current.update();]]></script>
+        <name>Get Data Template</name>
+        <onclick>generateTemplate()</onclick>
+        <order>100</order>
+        <script><![CDATA[function generateTemplate() {
+	// 	 var pollDialog = new GwtPollDialog(tableName, sysparm_query, sysparm_rows, sysparm_view, action, fields, excelType);
+	//  pollDialog.execute();
+	
+	var pollDialog = new GwtPollDialog('change_request', '', '', 'default', 'import_insert_template', 'ALL_FIELDS', 'xlsx');
+	pollDialog.execute();
+}]]></script>
         <show_insert>false</show_insert>
         <show_multiple_update>false</show_multiple_update>
         <show_query>false</show_query>
         <show_update>true</show_update>
         <sys_class_name>sys_ui_action</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2018-11-09 19:34:42</sys_created_on>
+        <sys_created_on>2018-11-12 22:22:32</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>5c2607e7dba12300c2acab7dca961955</sys_id>
-        <sys_mod_count>5</sys_mod_count>
-        <sys_name>PreValidate Fields</sys_name>
+        <sys_id>2af8cf24dbf12300c2acab7dca96197e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Get Data Template</sys_name>
         <sys_overrides/>
         <sys_package display_value="Standard Change Import Helper" source="x_2353_standard_ch">4a3e524bdb902300768f2a9a4896195f</sys_package>
         <sys_policy/>
         <sys_scope display_value="Standard Change Import Helper">4a3e524bdb902300768f2a9a4896195f</sys_scope>
-        <sys_update_name>sys_ui_action_5c2607e7dba12300c2acab7dca961955</sys_update_name>
+        <sys_update_name>sys_ui_action_2af8cf24dbf12300c2acab7dca96197e</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-11-12 23:18:40</sys_updated_on>
+        <sys_updated_on>2018-11-12 22:22:32</sys_updated_on>
         <table>x_2353_standard_ch_standard_change_sets</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>

@@ -5,7 +5,7 @@
         <client>false</client>
         <client_script_v2/>
         <comments>Launches scripts to start the import process.</comments>
-        <condition>current.state == 4</condition>
+        <condition>current.state == 7</condition>
         <form_action>true</form_action>
         <form_button>false</form_button>
         <form_button_v2>false</form_button_v2>
@@ -26,7 +26,7 @@
         <name>Start Import Process</name>
         <onclick/>
         <order>200</order>
-        <script><![CDATA[current.state = 10;
+        <script><![CDATA[current.state = 4;
 action.setRedirectURL(current);
 current.update();]]></script>
         <show_insert>false</show_insert>
@@ -39,7 +39,7 @@ current.update();]]></script>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>4dbbf663dba12300c2acab7dca961968</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_name>Start Import Process</sys_name>
         <sys_overrides/>
         <sys_package display_value="Standard Change Import Helper" source="x_2353_standard_ch">4a3e524bdb902300768f2a9a4896195f</sys_package>
@@ -47,7 +47,7 @@ current.update();]]></script>
         <sys_scope display_value="Standard Change Import Helper">4a3e524bdb902300768f2a9a4896195f</sys_scope>
         <sys_update_name>sys_ui_action_4dbbf663dba12300c2acab7dca961968</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-11-09 19:50:30</sys_updated_on>
+        <sys_updated_on>2018-11-12 23:25:39</sys_updated_on>
         <table>x_2353_standard_ch_standard_change_sets</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>
