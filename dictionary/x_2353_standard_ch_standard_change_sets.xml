@@ -5,7 +5,7 @@
         <element attributes="edge_encryption_enabled=true" default="true" label="Auto Update" max_length="40" name="auto_update" type="boolean"/>
         <element choice="1" label="Data Source" max_length="40" name="data_source" type="choice">
             <choice>
-                <element inactive_on_update="false" label="Attachment" sequence="100" value="attachment"/>
+                <element inactive_on_update="false" label="Spreadsheet" sequence="100" value="attachment"/>
                 <element inactive_on_update="false" label="Specified Table" sequence="200" value="user_table"/>
             </choice>
         </element>

@@ -5,7 +5,7 @@
         <client>false</client>
         <client_script_v2/>
         <comments>Launches script to validate the fields chosen against required fields, and those not allowed by the standard change configuration.</comments>
-        <condition>current.state.value == 3</condition>
+        <condition>current.state == 3</condition>
         <form_action>true</form_action>
         <form_button>false</form_button>
         <form_button_v2>false</form_button_v2>
@@ -26,7 +26,19 @@
         <name>PreValidate Fields</name>
         <onclick/>
         <order>300</order>
-        <script><![CDATA[current.state = 6; //Set State to Data Validation
+        <script><![CDATA[// Values for State Field : 
+// ---------------------------
+// 1	New
+// 2	Awaiting Data
+// 3	Awaiting Field Map
+// 6	Data Validation
+// 7	Data Validated
+// 5	Error Resolution
+// 4	Ready for Import
+// 10	Import Completed
+// 11	Import Cancelled
+//============================
+current.state = 6; //Set State to Data Validation
 action.setRedirectURL(current);
 current.update();]]></script>
         <show_insert>false</show_insert>
@@ -39,7 +51,7 @@ current.update();]]></script>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>5c2607e7dba12300c2acab7dca961955</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>PreValidate Fields</sys_name>
         <sys_overrides/>
         <sys_package display_value="Standard Change Import Helper" source="x_2353_standard_ch">4a3e524bdb902300768f2a9a4896195f</sys_package>
@@ -47,7 +59,7 @@ current.update();]]></script>
         <sys_scope display_value="Standard Change Import Helper">4a3e524bdb902300768f2a9a4896195f</sys_scope>
         <sys_update_name>sys_ui_action_5c2607e7dba12300c2acab7dca961955</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-11-12 23:18:40</sys_updated_on>
+        <sys_updated_on>2019-03-29 19:37:40</sys_updated_on>
         <table>x_2353_standard_ch_standard_change_sets</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>

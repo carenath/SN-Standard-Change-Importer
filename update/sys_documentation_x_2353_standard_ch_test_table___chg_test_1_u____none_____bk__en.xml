@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="u____none_____bk_" label="-- None -- (BK)" language="en" table="x_2353_standard_ch_test_table___chg_test_1">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>u____none_____bk_</element>
+            <help/>
+            <hint/>
+            <label>-- None -- (BK)</label>
+            <language>en</language>
+            <name>x_2353_standard_ch_test_table___chg_test_1</name>
+            <plural>-- None -- (BK)</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2019-03-28 14:41:01</sys_created_on>
+            <sys_id>95e7f5184fa877006613cab18110c769</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>-- None -- (BK)</sys_name>
+            <sys_package display_value="Standard Change Import Helper" source="x_2353_standard_ch">4a3e524bdb902300768f2a9a4896195f</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Standard Change Import Helper">4a3e524bdb902300768f2a9a4896195f</sys_scope>
+            <sys_update_name>sys_documentation_x_2353_standard_ch_test_table___chg_test_1_u____none_____bk__en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2019-03-28 14:41:01</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

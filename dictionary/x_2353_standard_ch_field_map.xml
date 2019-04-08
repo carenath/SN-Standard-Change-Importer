@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element label="Field Map" max_length="40" name="x_2353_standard_ch_field_map" type="collection">
-        <element label="Change Set" max_length="32" name="change_set" reference="x_2353_standard_ch_standard_change_sets" type="reference"/>
-        <element label="Destination Field" max_length="32" name="destination_field" reference="sys_dictionary" reference_qual="nameSTARTSWITHchange_request^elementNOT LIKEsys_^active=true^EQ" reference_qual_condition="nameSTARTSWITHchange_request^elementNOT LIKEsys_^active=true^EQ" type="reference"/>
-        <element label="Source Field" max_length="32" name="source_field" reference="x_2353_standard_ch_source_fields" reference_qual="change_setSAMEASchange_set^EQ" reference_qual_condition="change_setSAMEASchange_set^EQ" type="reference"/>
+        <element label="Change Set" mandatory="true" max_length="32" name="change_set" reference="x_2353_standard_ch_standard_change_sets" type="reference"/>
+        <element label="Destination Field" mandatory="true" max_length="32" name="destination_field" reference="sys_dictionary" reference_qual="nameSTARTSWITHchange_request^elementNOT LIKEsys_^active=true^EQ" reference_qual_condition="nameSTARTSWITHchange_request^elementNOT LIKEsys_^active=true^EQ" type="reference"/>
+        <element label="Source Field" mandatory="true" max_length="32" name="source_field" reference="x_2353_standard_ch_source_fields" reference_qual="change_setSAMEASchange_set^EQ" reference_qual_condition="change_setSAMEASchange_set^EQ" type="reference"/>
         <index name="index">
             <element name="change_set"/>
         </index>

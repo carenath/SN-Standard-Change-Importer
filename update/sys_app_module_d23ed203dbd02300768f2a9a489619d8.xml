@@ -14,7 +14,7 @@
         <mobile_title>Standard Change Sets</mobile_title>
         <mobile_view_name>Mobile</mobile_view_name>
         <name>x_2353_standard_ch_standard_change_sets</name>
-        <order/>
+        <order>100</order>
         <override_menu_roles>false</override_menu_roles>
         <query/>
         <report/>
@@ -25,7 +25,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>d23ed203dbd02300768f2a9a489619d8</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name>Standard Change Sets</sys_name>
         <sys_overrides/>
         <sys_package display_value="Standard Change Import Helper" source="x_2353_standard_ch">4a3e524bdb902300768f2a9a4896195f</sys_package>
@@ -33,7 +33,7 @@
         <sys_scope display_value="Standard Change Import Helper">4a3e524bdb902300768f2a9a4896195f</sys_scope>
         <sys_update_name>sys_app_module_d23ed203dbd02300768f2a9a489619d8</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-09-07 00:04:54</sys_updated_on>
+        <sys_updated_on>2019-03-29 19:13:02</sys_updated_on>
         <timeline_page/>
         <title>Standard Change Sets</title>
         <uncancelable>false</uncancelable>

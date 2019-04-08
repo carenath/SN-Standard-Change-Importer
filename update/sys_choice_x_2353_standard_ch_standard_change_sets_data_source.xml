@@ -5,7 +5,7 @@
             <element>data_source</element>
             <hint/>
             <inactive>false</inactive>
-            <label>Attachment</label>
+            <label>Spreadsheet</label>
             <language>en</language>
             <name>x_2353_standard_ch_standard_change_sets</name>
             <sequence>100</sequence>
@@ -14,9 +14,9 @@
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
             <sys_id>9fa8d2e4db712300c2acab7dca961964</sys_id>
-            <sys_mod_count>2</sys_mod_count>
+            <sys_mod_count>3</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-11-12 18:50:53</sys_updated_on>
+            <sys_updated_on>2019-03-28 14:43:38</sys_updated_on>
             <value>attachment</value>
         </sys_choice>
         <sys_choice action="INSERT_OR_UPDATE">
@@ -44,7 +44,7 @@
             <sys_class_name>sys_choice_set</sys_class_name>
             <sys_created_by>admin</sys_created_by>
             <sys_created_on>2018-11-12 18:50:19</sys_created_on>
-            <sys_id>93b8daa4db712300c2acab7dca96193c</sys_id>
+            <sys_id>8ff5eadf4f9cb3006613cab18110c77d</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_name>data_source</sys_name>
             <sys_package display_value="Standard Change Import Helper" source="x_2353_standard_ch">4a3e524bdb902300768f2a9a4896195f</sys_package>

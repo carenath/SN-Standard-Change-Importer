@@ -4,7 +4,7 @@
         <active>true</active>
         <client>true</client>
         <client_script_v2/>
-        <comments/>
+        <comments>UI Action to generate a template based on the current columns available in the Change Module.</comments>
         <condition>current.data_source == "attachment"</condition>
         <form_action>true</form_action>
         <form_button>false</form_button>
@@ -26,7 +26,20 @@
         <name>Get Data Template</name>
         <onclick>generateTemplate()</onclick>
         <order>100</order>
-        <script><![CDATA[function generateTemplate() {
+        <script><![CDATA[// Values for State Field :
+// ---------------------------
+// 1	New
+// 2	Awaiting Data
+// 3	Awaiting Field Map
+// 6	Data Validation
+// 7	Data Validated
+// 5	Error Resolution
+// 4	Ready for Import
+// 10	Import Completed
+// 11	Import Cancelled
+//============================
+
+function generateTemplate() {
 	// 	 var pollDialog = new GwtPollDialog(tableName, sysparm_query, sysparm_rows, sysparm_view, action, fields, excelType);
 	//  pollDialog.execute();
 	
@@ -43,7 +56,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>2af8cf24dbf12300c2acab7dca96197e</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>Get Data Template</sys_name>
         <sys_overrides/>
         <sys_package display_value="Standard Change Import Helper" source="x_2353_standard_ch">4a3e524bdb902300768f2a9a4896195f</sys_package>
@@ -51,7 +64,7 @@
         <sys_scope display_value="Standard Change Import Helper">4a3e524bdb902300768f2a9a4896195f</sys_scope>
         <sys_update_name>sys_ui_action_2af8cf24dbf12300c2acab7dca96197e</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-11-12 22:22:32</sys_updated_on>
+        <sys_updated_on>2019-03-29 19:50:02</sys_updated_on>
         <table>x_2353_standard_ch_standard_change_sets</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>
