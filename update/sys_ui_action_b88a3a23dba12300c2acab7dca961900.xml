@@ -5,7 +5,7 @@
         <client>false</client>
         <client_script_v2/>
         <comments>Loads Custom Source Data into Import Table/Set</comments>
-        <condition>current.state != 2 &amp;&amp; current.state != 10 &amp;&amp; current.data_source == "attachment"</condition>
+        <condition>current.state != 11 &amp;&amp; current.state != 10 &amp;&amp; current.data_source == "attachment"</condition>
         <form_action>true</form_action>
         <form_button>false</form_button>
         <form_button_v2>false</form_button_v2>
@@ -41,7 +41,7 @@
 
 // current.state != 2 && current.state != 10 && current.data_source != "Specified Table"
 var stdChangeHelper = new StdChangeBulkImportHelper();
-stdChangeHelper.validateFielMaps(current.sys_id.toString());
+//stdChangeHelper.validateFielMaps(current.sys_id.toString());
 
 current.state = 3;
 action.setRedirectURL("/create_import_set.do");
@@ -56,7 +56,7 @@ current.update();]]></script>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>b88a3a23dba12300c2acab7dca961900</sys_id>
-        <sys_mod_count>23</sys_mod_count>
+        <sys_mod_count>25</sys_mod_count>
         <sys_name>Load Source Data</sys_name>
         <sys_overrides/>
         <sys_package display_value="Standard Change Import Helper" source="x_2353_standard_ch">4a3e524bdb902300768f2a9a4896195f</sys_package>
@@ -64,7 +64,7 @@ current.update();]]></script>
         <sys_scope display_value="Standard Change Import Helper">4a3e524bdb902300768f2a9a4896195f</sys_scope>
         <sys_update_name>sys_ui_action_b88a3a23dba12300c2acab7dca961900</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2019-03-29 20:03:39</sys_updated_on>
+        <sys_updated_on>2019-04-24 13:50:56</sys_updated_on>
         <table>x_2353_standard_ch_standard_change_sets</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>
